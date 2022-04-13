@@ -1,6 +1,10 @@
 fn main() {
     ex_print_some(ex_div_some(15, 5));
+    ex_print_some(ex_div_some(15, 0));
+    ex_print_some_match(ex_div_some(20, 5));
+    ex_print_some_match(ex_div_some(20, 0));
     ex_print_result(ex_div_result(10, 5));
+    ex_print_result(ex_div_result(10, 0));
 }
 
 fn ex_print_some<T: std::fmt::Display>(ans: Option<T>) {
@@ -8,6 +12,13 @@ fn ex_print_some<T: std::fmt::Display>(ans: Option<T>) {
         println!("{}", x)
     } else {
         println!("None")
+    }
+}
+
+fn ex_print_some_match<T: std::fmt::Display>(ans: Option<T>) {
+    match ans {
+        Some(x) => println!("{}", x),
+        None => println!("None"),
     }
 }
 
