@@ -1,10 +1,9 @@
 fn main() {
     let s = "Hello".to_string();
-    let ss = s.clone();
-    myprint(s);
-    myprint(ss);
+    myprint(&s);
+    myprint(&s);
 }
 
-fn myprint<T: std::fmt::Display>(msg: T) {
-    println!("{}", msg);
+fn myprint<T: std::fmt::Display>(msg: &T) {
+    println!("{}", *msg);
 }
