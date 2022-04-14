@@ -1,6 +1,9 @@
 fn main() {
-    let s = "Hello".to_string();
-    let t = s;
-    println!("{}", t);
-    println!("{}", s);
+    let s = 1;
+    myprint(s);
+    myprint(s);
+}
+
+fn myprint<T: std::fmt::Display>(msg: T) {
+    println!("{}", msg);
 }
