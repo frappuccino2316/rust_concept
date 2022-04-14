@@ -1,6 +1,6 @@
 fn main() {
-    let mut x = 1;
-    x += 1;
-    println!("{}", x);
-    let y = 3;
+    let s = 1;
+    let t = s;
+    println!("{}", t);
+    println!("{}", s);
 }
