@@ -1,5 +1,5 @@
 fn main() {
-    let s = 1;
+    let s = "Hello".to_string();
     myprint(s);
     myprint(s);
 }
