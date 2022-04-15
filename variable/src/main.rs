@@ -1,11 +1,9 @@
 fn main() {
-    let mut x = 1;
-    let x_ref = &x;
-
-    x = 2;
-    println!("{}", x_ref);
+    let s = return_hello();
+    println!("{}", s);
 }
 
-// fn myclear(x: &mut String) {
-//     x.clear();
-// }
+fn return_hello() -> &String {
+    let s = "Hello".to_strong();
+    &s
+}
