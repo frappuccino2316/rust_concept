@@ -1,8 +1,11 @@
 fn main() {
-    let x;
-    {
-        let y = 1;
-        x = &y;
+    let v1 = [1, 2, 3, 4, 5];
+    let p = pick1(&v1, 2);
+    for ss in p {
+        println!("{}", ss);
     }
-    println!("{}", x);
+}
+
+fn pick1(x: &[i32], end: usize) -> &[i32] {
+    &x[..end]
 }
