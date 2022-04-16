@@ -1,7 +1,6 @@
 fn main() {
-    let c = 'c';
-    let a = 'あ';
+    let s = "hello";
 
-    println!("{}", c);
-    println!("{}", a);
+    println!("{}", s);
+    println!("{}", &s[0..2]);
 }
