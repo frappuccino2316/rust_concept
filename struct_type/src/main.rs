@@ -4,7 +4,13 @@ fn main() {
 
     let hana = Person { name, age };
 
+    let jiro = Person{
+        name: String::from("jiro"),
+        ..hana
+    };
+
     println!("{}, {}", hana.name, hana.age);
+    println!("{}, {}", jiro.name, jiro.age);
 }
 
 struct Person {
