@@ -1,7 +1,32 @@
 fn main() {
-    let color = ColorRGB(255, 128, 0);
+    let mut taro = person::Person::new(String::from("taro"), 10);
 
-    println!("{}, {}, {}", color.0, color.1, color.2);
+    println!("{}", taro.name);
+
+    let age_plus1 = taro.age_incr(1);
+    println!("{}", age_plus1);
+
+    taro.age_incr_replace(10);
+    println!("{}", taro.age);
 }
 
-struct ColorRGB(u32, u32, u32);
+mod person {
+pub struct Person {
+    pub name: String,
+    pub age: u8,
+}
+
+impl Person {
+    pub fn new(name: String, age: u8) -> Person {
+        Person { name, age }
+    }
+
+    pub fn age_incr(&self, incr: u8) -> u8 {
+        self.age + incr
+    }
+
+    pub fn age_incr_replace(&mut self, incr: u8) {
+        self.age += incr;
+    }
+}
+}
