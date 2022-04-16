@@ -1,6 +1,10 @@
 fn main() {
-    let s = "hello";
+    let mut s = "Hello".to_string();
+    let ss = String::from("Hello!!");
+
+    s.push_str(", World!");
 
     println!("{}", s);
-    println!("{}", &s[0..2]);
+    println!("{}", ss);
+    println!("{}", &s[0..3]);
 }
