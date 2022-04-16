@@ -11,22 +11,22 @@ fn main() {
 }
 
 mod person {
-pub struct Person {
-    pub name: String,
-    pub age: u8,
-}
-
-impl Person {
-    pub fn new(name: String, age: u8) -> Person {
-        Person { name, age }
+    pub struct Person {
+        pub name: String,
+        pub age: u8,
     }
 
-    pub fn age_incr(&self, incr: u8) -> u8 {
-        self.age + incr
-    }
+    impl Person {
+        pub fn new(name: String, age: u8) -> Person {
+            Person { name, age }
+        }
 
-    pub fn age_incr_replace(&mut self, incr: u8) {
-        self.age += incr;
+        pub fn age_incr(&self, incr: u8) -> u8 {
+            self.age + incr
+        }
+
+        pub fn age_incr_replace(&mut self, incr: u8) {
+            self.age += incr;
+        }
     }
-}
 }
