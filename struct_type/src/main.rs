@@ -1,19 +1,7 @@
 fn main() {
-    let name = String::from("hana");
-    let age = 30;
+    let color = ColorRGB(255, 128, 0);
 
-    let hana = Person { name, age };
-
-    let jiro = Person{
-        name: String::from("jiro"),
-        ..hana
-    };
-
-    println!("{}, {}", hana.name, hana.age);
-    println!("{}, {}", jiro.name, jiro.age);
+    println!("{}, {}, {}", color.0, color.1, color.2);
 }
 
-struct Person {
-    name: String,
-    age: u8,
-}
+struct ColorRGB(u32, u32, u32);
