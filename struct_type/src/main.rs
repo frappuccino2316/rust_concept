@@ -8,9 +8,12 @@ fn main() {
 
     taro.age_incr_replace(10);
     println!("{}", taro.age);
+
+    println!("{:?}", taro);
 }
 
 mod person {
+    #[derive(Debug)]
     pub struct Person {
         pub name: String,
         pub age: u8,
