@@ -15,8 +15,8 @@ fn main() {
     let hanako = person::Person::new(String::from("hanako"), 48);
 
     let sato = Parents {
-        father: taro,
-        mother: hanako,
+        father: &taro,
+        mother: &hanako,
     };
     println!("{:?}", sato);
 }
@@ -44,7 +44,7 @@ mod person {
 }
 
 #[derive(Debug)]
-struct Parents {
-    father: person::Person,
-    mother: person::Person,
+struct Parents<'a, 'b> {
+    father: &'a person::Person,
+    mother: &'b person::Person,
 }
