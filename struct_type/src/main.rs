@@ -1,11 +1,10 @@
 fn main() {
-    let mut taro = Person {
-        name: String::from("taro"),
-        age: 10,
-    };
-    taro.age = 20;
+    let name = String::from("hana");
+    let age = 30;
 
-    println!("{}, {}", taro.name, taro.age);
+    let hana = Person { name, age };
+
+    println!("{}, {}", hana.name, hana.age);
 }
 
 struct Person {
