@@ -1,8 +1,9 @@
 fn main() {
-    let taro = Person {
+    let mut taro = Person {
         name: String::from("taro"),
         age: 10,
     };
+    taro.age = 20;
 
     println!("{}, {}", taro.name, taro.age);
 }
