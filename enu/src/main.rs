@@ -1,3 +1,5 @@
+use std::cmp::Ordering;
+
 fn main() {
     print_sign(determine_sign(1));
     print_sign(determine_sign(-2));
@@ -5,12 +7,10 @@ fn main() {
 }
 
 fn determine_sign(x: i32) -> Sign {
-    if x > 0 {
-        Sign::Positive
-    } else if x < 0 {
-        Sign::Negative
-    } else {
-        Sign::Zero
+    match x.cmp(&0) {
+        Ordering::Greater => Sign::Positive,
+        Ordering::Less => Sign::Negative,
+        Ordering::Equal => Sign::Zero
     }
 }
 
