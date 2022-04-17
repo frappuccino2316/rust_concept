@@ -1,5 +1,7 @@
 fn main() {
-    println!("Hello, world!");
+    print_sign(determine_sign(1));
+    print_sign(determine_sign(-2));
+    print_sign(determine_sign(0));
 }
 
 fn determine_sign(x: i32) -> Sign {
@@ -12,8 +14,16 @@ fn determine_sign(x: i32) -> Sign {
     }
 }
 
+fn print_sign(s: Sign) {
+    match s {
+        Sign::Positive => println!("+"),
+        Sign::Zero => println!("0"),
+        Sign::Negative => println!("-"),
+    }
+}
+
 enum Sign {
     Positive,
     Zero,
-    Negative
+    Negative,
 }
