@@ -7,9 +7,8 @@ fn main() {
 }
 
 fn func_ex_div_some(x: i32, y: i32) -> Option<i32> {
-    if y == 0 {
-        None
-    } else {
-        Some(x / y)
+    match y {
+        0 => None,
+        _ => Some(x / y),
     }
 }
