@@ -1,15 +1,15 @@
 fn main() {
-    let ans = func_ex_div_some(8, 2);
+    let rr1 = func_ex_unwrap(5);
+    println!("rr1: {}", rr1.unwrap());
 
-    match ans {
-        Some(x) => println!("{}", x),
-        None => println!("None"),
-    }
+    let rr2 = func_ex_unwrap(-5);
+    println!("rr1: {}", rr2.unwrap());
 }
 
-fn func_ex_div_some(x: i32, y: i32) -> Option<i32> {
-    match y {
-        0 => None,
-        _ => Some(x / y),
+fn func_ex_unwrap(x: i32) -> Option<i32> {
+    if x >= 0 {
+        Some(x)
+    } else {
+        None
     }
 }
