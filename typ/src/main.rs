@@ -1,7 +1,7 @@
 fn main() {
     print_mydiv(5, 2);
     print_mydiv(-5, 0);
-    print_mydiv(0, 0);
+    print_mydiv(-5, -5);
 }
 
 fn print_mydiv(x: i32, y: i32) {
