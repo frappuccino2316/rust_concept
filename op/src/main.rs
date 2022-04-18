@@ -1,8 +1,9 @@
 fn main() {
-    if let Some(result) = func_ex_div_some(8, 2) {
-        println!("{}", result);
-    } else {
-        println!("None");
+    let ans = func_ex_div_some(8, 2);
+
+    match ans {
+        Some(x) => println!("{}", x),
+        None => println!("None"),
     }
 }
 
