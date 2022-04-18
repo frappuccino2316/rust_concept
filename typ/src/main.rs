@@ -1,3 +1,5 @@
+use thiserror::Error;
+
 fn main() {
     print_mydiv(5, 2);
     print_mydiv(-5, 0);
@@ -7,10 +9,7 @@ fn main() {
 fn print_mydiv(x: i32, y: i32) {
     match mydiv(x, y) {
         Ok(ans) => println!("no error. ans = {}", ans),
-        Err(DivError::DivByZero(a)) => println!("{} divided by zero", a),
-        Err(DivError::BothNegative(a, b)) => {
-            println!("Both numerator {} and denominator {} are negative.", a, b)
-        }
+        Err(e) => println!("{}", e),
     }
 }
 
@@ -24,7 +23,10 @@ fn mydiv(x: i32, y: i32) -> Result<i32, DivError> {
     }
 }
 
+#[derive(Error, Debug)]
 enum DivError {
+    #[error("{0} divided by zero")]
     DivByZero(i32),
+    #[error("Both numerator {0} and denominator {1} are negative")]
     BothNegative(i32, i32),
 }
