@@ -1,17 +1,23 @@
-use std::collections::HashMap;
+const BUFSIZE: usize = 1024;
+static OFFSET: usize = 15;
 
 fn main() {
-    let mut capitals = HashMap::new();
+    let offset_ref = &OFFSET;
 
-    capitals.insert("Japan", "Tokyo");
-    capitals.insert("UK", "London");
-    capitals.insert("US", "Washington D.C.");
+    println!("bufsize = {}", BUFSIZE);
+    println!("offset = {}", offset_ref);
 
-    let targets = vec!["Japan", "US", "France"];
-    for tg in targets {
-        match capitals.get(tg) {
-            Some(s) => println!("The capital of {} is {}", tg, s),
-            None => println!("The capital of {} is not found", tg),
-        }
+    add_static();
+    add_static();
+    add_static();
+}
+
+fn add_static() {
+    const INCREMENT: usize = 2;
+    static mut ADD: usize = 1;
+
+    unsafe {
+        ADD += INCREMENT;
+        println!("add = {}", ADD);
     }
 }
