@@ -1,3 +1,6 @@
 fn main() {
-    println!("Hello, world!");
+    let boxed = Box::new(1);
+    let val = *boxed;
+
+    println!("val = {}", val);
 }
