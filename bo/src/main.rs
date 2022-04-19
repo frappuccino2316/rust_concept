@@ -1,6 +1,12 @@
-fn main() {
-    let boxed = Box::new(1);
-    let val = *boxed;
+use crate::RecursiveEnum::{Val, Null};
 
-    println!("val = {}", val);
+fn main() {
+    let x = Val(Box::new(Val(Box::new(Null))));
+    println!("{:?}", x);
+}
+
+#[derive(Debug)]
+enum RecursiveEnum {
+    Val(Box<RecursiveEnum>),
+    Null
 }
