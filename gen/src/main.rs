@@ -6,7 +6,11 @@ fn main() {
     println!("{}", area(&rect));
 }
 
-fn area<T>(x: &T) -> f64 {
+trait CalcArea {
+    fn calc_area(&self)->f64;
+}
+
+fn area<T: CalcArea>(x: &T) -> f64 {
     x.calc_area()
 }
 
@@ -15,7 +19,7 @@ struct Rectangle {
     height: f64,
 }
 
-impl Rectangle {
+impl CalcArea for Rectangle {
     fn calc_area(&self) -> f64 {
         self.width * self.height
     }
@@ -26,7 +30,7 @@ struct RightTriangle {
     height: f64,
 }
 
-impl RightTriangle {
+impl CalcArea for RightTriangle {
     fn calc_area(&self) -> f64 {
         self.width * self.height * 0.5
     }
