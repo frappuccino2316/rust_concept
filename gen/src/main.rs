@@ -7,7 +7,7 @@ fn main() {
 }
 
 trait CalcArea {
-    fn calc_area(&self)->f64;
+    fn calc_area(&self) -> f64;
 }
 
 fn area<T: CalcArea>(x: &T) -> f64 {
