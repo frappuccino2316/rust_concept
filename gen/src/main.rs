@@ -20,6 +20,9 @@ fn main() {
     println!("{}", area(&right));
 }
 
-fn area<T: CalcArea>(x: &T) -> f64 {
+fn area<T>(x: &T) -> f64
+where
+    T: CalcArea,
+{
     x.calc_area()
 }
