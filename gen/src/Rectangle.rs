@@ -1,6 +1,8 @@
+use crate::calc::CalcArea;
+
 pub struct Rectangle {
-    width: f64,
-    height: f64,
+    pub width: f64,
+    pub height: f64,
 }
 
 impl CalcArea for Rectangle {
