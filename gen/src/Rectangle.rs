@@ -1,6 +1,4 @@
-use crate::calc::area::CalcArea;
-
-struct Rectangle {
+pub struct Rectangle {
     width: f64,
     height: f64,
 }

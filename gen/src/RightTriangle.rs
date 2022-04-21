@@ -1,6 +1,4 @@
-use crate::calc::area::CalcArea;
-
-struct RightTriangle {
+pub struct RightTriangle {
     width: f64,
     height: f64,
 }
