@@ -1,8 +1,8 @@
-mod rectangle;
 mod calc;
+mod rectangle;
 
-use rectangle::Rectangle;
 use calc::CalcArea;
+use rectangle::Rectangle;
 
 fn main() {
     let rect = Rectangle {
