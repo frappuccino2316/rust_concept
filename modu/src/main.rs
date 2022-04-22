@@ -1,6 +1,5 @@
-mod module_a;
-use module_a::print_a;
+mod sub;
 
 fn main() {
-    print_a();
+    sub::module_a::print_a();
 }
