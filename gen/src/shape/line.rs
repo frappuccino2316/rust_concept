@@ -1,7 +1,7 @@
 use crate::shape::calc::CalcLength;
 
 pub struct Line {
-    length: f64,
+    pub length: f64,
 }
 
 impl CalcLength for Line {
