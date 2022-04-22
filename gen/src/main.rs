@@ -1,10 +1,3 @@
-// mod calc;
-// mod rectangle;
-// mod right_triangle;
-
-// use calc::CalcArea;
-// use rectangle::Rectangle;
-// use right_triangle::RightTriangle;
 mod shape;
 
 use shape::calc::CalcArea;
