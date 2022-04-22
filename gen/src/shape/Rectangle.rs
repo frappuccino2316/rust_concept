@@ -1,4 +1,4 @@
-use crate::calc::CalcArea;
+use crate::shape::calc::CalcArea;
 
 pub struct Rectangle {
     pub width: f64,

@@ -1,10 +1,15 @@
-mod calc;
-mod rectangle;
-mod right_triangle;
+// mod calc;
+// mod rectangle;
+// mod right_triangle;
 
-use calc::CalcArea;
-use rectangle::Rectangle;
-use right_triangle::RightTriangle;
+// use calc::CalcArea;
+// use rectangle::Rectangle;
+// use right_triangle::RightTriangle;
+mod shape;
+
+use shape::calc::CalcArea;
+use shape::rectangle::Rectangle;
+use shape::right_triangle::RightTriangle;
 
 fn main() {
     let rect = Rectangle {
